@@ -8,11 +8,9 @@ window.onload = function () {
       const news = JSON.parse(ev.data);
       render("#data", news.done ? "No more updates available." : news.value);
       if (news.done) {
+        event.close();
         markEnd();
       }
-    };
-    event.onerror = () => {
-      event.close();
     };
   }
 

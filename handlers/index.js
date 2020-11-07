@@ -36,7 +36,6 @@ function sseHandler(res) {
     );
     if (nextValue.done) {
       clearInterval(timer);
-      res.end();
     }
   }, 1000);
 }
