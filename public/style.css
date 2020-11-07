@@ -1,0 +1,33 @@
+* {
+  font-family: "Source Code Pro", monospace;
+}
+#data {
+  counter-reset: index;
+  border: 5px double;
+  padding: 30px;
+  width: 50%;
+  line-height: 2;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#data:empty {
+  border: none;
+}
+#data > div {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+#data > div::before {
+  counter-increment: index;
+  content: counter(index) ": ";
+}
+#data > div[data-end] {
+  color: red;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0;
+}
+#data > div[data-end]::before {
+  content: "";
+}
